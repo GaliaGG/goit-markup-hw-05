@@ -51,7 +51,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -3px;
 
   width: 100%;
   height: 4px;
@@ -373,7 +373,7 @@ body {
 .customers-item {
   width: calc((100%-120px)/6);
   height: 88px;
-  border: 1px solid var(--additional-light-grey);
+  
   border-radius: 4px;
   cursor: pointer;
 
@@ -385,6 +385,7 @@ body {
   padding: 16px 32px;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--additional-light-grey);
 }
 
 .customers-icon {
@@ -394,7 +395,7 @@ body {
   display: block;
 }
 
-.customers-item:hover {
+.customers-link:hover {
   border-color: var(--button-acent);
 }
 
@@ -502,14 +503,12 @@ body {
 .card-item {
   max-width: calc((100% - 48px) / 3);
   background-color: var(--white);
-  border: 1px solid var(--additional-color);
+  
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .card-link {
   display: block;
-
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-text {
@@ -519,22 +518,16 @@ body {
 
   border: 1px solid var(--additional-color);
   border-top: none;
-  
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), border-top 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-link:hover .card-text,
 .card-link:focus .card-text {
-  border: 1px solid transparent;
+  border: 1px solid var(--additional-secondary-color);
   border-top: none;
-}
-
-
-.card-link:hover,
-.card-link:focus {
-  border: 0.5px solid #F4F4FD, 0.5 solid transparent;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-
 
 .text-portfolio {
   margin: 0;
@@ -544,6 +537,7 @@ body {
 
 .card-overlay {
   position: relative;
+  overflow: hidden;
 }
 
 .card-thumb::before {
@@ -559,7 +553,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--acent-color);
-  overflow: hidden;
+  
 }
 
 .card-link:hover .card-thumb::before,
